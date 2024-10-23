@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wajid_project/screens/home_page_bottom.dart';
 import 'package:wajid_project/screens/home_screen.dart';
 import 'package:wajid_project/screens/sign_up_screen.dart';
 
@@ -88,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () {
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
-                            return BankingAppScreen();
+                            return HomeScreen1();
                           }));
                         },
                         style: ElevatedButton.styleFrom(

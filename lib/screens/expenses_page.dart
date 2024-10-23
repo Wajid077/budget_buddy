@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BankingAppScreen extends StatefulWidget {
-  const BankingAppScreen({super.key});
+class ExpensePage extends StatefulWidget {
+  const ExpensePage({super.key});
 
   @override
-  _BankingAppScreenState createState() => _BankingAppScreenState();
+  State<ExpensePage> createState() => _ExpensePageState();
 }
 
-class _BankingAppScreenState extends State<BankingAppScreen> {
+class _ExpensePageState extends State<ExpensePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,7 @@ class _BankingAppScreenState extends State<BankingAppScreen> {
                     // Title
                     const Expanded(
                       child: Text(
-                        "Accounts",
+                        "Expenses",
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -46,7 +46,7 @@ class _BankingAppScreenState extends State<BankingAppScreen> {
                     ),
                     // Profile Image
                     const CircleAvatar(
-                      backgroundImage: AssetImage( 'assets/waji.jpg'),
+                      backgroundImage: AssetImage('assets/pi.jpg'),
                       radius: 18,
                     ),
                   ],
@@ -84,46 +84,14 @@ class _BankingAppScreenState extends State<BankingAppScreen> {
               ],
             ),
           ),
-          const SizedBox(height: 20),
-
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 13),
+          const SizedBox(height: 10),
+          Padding(
+            padding: EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Account details section
                 const Text(
-                  "Account details",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-
-                // Grid of account details
-                GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    _buildAccountDetailCard(
-                        "My Balance", "50,000", Colors.orange, Icons.wallet),
-                    _buildAccountDetailCard(
-                        "Income", "55,000", Colors.blue, Icons.attach_money),
-                    _buildAccountDetailCard(
-                        "Expense", "50,000", Colors.red, Icons.money_off),
-                    _buildAccountDetailCard(
-                        "Total Saving", "5,000", Colors.green, Icons.savings),
-                  ],
-                ),
-                const SizedBox(height: 20),
-
-                // Recent Transaction section
-                const Text(
-                  "Recent Transaction",
+                  "Expenses",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -138,71 +106,32 @@ class _BankingAppScreenState extends State<BankingAppScreen> {
                     "-1500", Colors.red),
                 _buildTransactionItem("Deposit from my", "28 September 2024",
                     "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
+                _buildTransactionItem("Deposit from my", "28 September 2024",
+                    "-1500", Colors.red),
               ],
             ),
-          )
-        ],
-      ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: 0,
-      //   selectedItemColor: Colors.blue,
-      //   unselectedItemColor: Colors.grey,
-      //   items: const [
-      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-      //     BottomNavigationBarItem(icon: Icon(Icons.receipt), label: ""),
-      //     BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: ""),
-      //     BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-      //     BottomNavigationBarItem(icon: Icon(Icons.settings), label: ""),
-      //   ],
-      // ),
-    );
-  }
-
-  // Account Detail Card Widget
-  Widget _buildAccountDetailCard(
-      String title, String amount, Color color, IconData icon) {
-    return Container(
-      padding: const EdgeInsets.all(12), // Reduced padding for compactness
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        // mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon,
-              color: Colors.white, size: 30), // Adjust the icon size if needed
-          const SizedBox(width: 10), // Reduced spacing between icon and text
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize
-                .min, // Prevents the Column from expanding vertically
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14, // Adjusted font size for title
-                ),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                amount,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18, // Adjusted font size for amount
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
           ),
         ],
       ),
     );
   }
 
-  // Transaction Item Widget
   Widget _buildTransactionItem(
       String description, String date, String amount, Color amountColor) {
     return Container(
