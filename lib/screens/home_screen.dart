@@ -52,6 +52,8 @@ class _BankingAppScreenState extends State<BankingAppScreen> {
                   ],
                 ),
                 const SizedBox(height: 20),
+                // const SizedBox(height: 20),
+                // const SizedBox(height: 20),
 
                 // Search bar
                 Container(
